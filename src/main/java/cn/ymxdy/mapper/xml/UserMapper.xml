@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ymxdy.mapper.UserMapper">
+    <insert id="insertBatch">
+        insert into user.tb_user(user_name, address) values
+        <foreach collection="map" index="key" item="value" separator=",">
+            (#{key},#{value})
+        </foreach>
+
+    </insert>
+    <insert id="objectInsert">
+        insert into user.tb_user(user_name, address) values
+        <foreach collection="list" index="key" item="value" separator=",">
+            (#{value.userName},#{value.address})
+        </foreach>
+
+
+    </insert>
+
+
+    <select id="selectById" resultType="cn.ymxdy.entity.User">
+        select *
+        from user.tb_user;
+    </select>
+
+    <select id="getIds" resultType="cn.ymxdy.entity.User">
+        select * from user.tb_user where id in
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
+</mapper>

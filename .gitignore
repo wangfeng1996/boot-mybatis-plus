@@ -1,0 +1,58 @@
+### gradle ###
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.settings/
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+
+### IntelliJ IDEA ###
+/.idea/
+/private/
+/.mvn/
+/storage/
+/litemall.iml
+.checkstyle
+.idea
+*.iws
+*.iml
+*.ipr
+rebel.xml
+### maven ###
+target/
+*.war
+*.ear
+*.zip
+*.tar
+*.tar.gz
+mvnw.cmd
+
+### logs ####
+/logs/
+*.log
+/upload
+/webapp
+### temp ignore ###
+*.cache
+*.diff
+*.patch
+*.tmp
+*.java~
+*.properties~
+*.xml~
+
+### system ignore ###
+.DS_Store
+Thumbs.db
+Servers
+.metadata
+upload
+gen_code
+application-sk.yml
